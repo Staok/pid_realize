@@ -17,12 +17,12 @@ int main()
     srand((int)time(0));
     printf("%s\n",a[0]);
 
-    pid.SetSpeed = 202.02;
+    pid[Moto1PID].pid_para.SetSpeed = 280.886;
     for(i = 0;i < 200;i++)
     {
-        temp = (pid.pid_realize)();
-        pid.ActualSpeed = temp;
-        printf("%.2f\t",temp);
+        temp = (pid[Moto1PID].pid_realize)(&(pid[Moto1PID].pid_para));
+        pid[Moto1PID].pid_para.ActualSpeed = temp;
+        printf("%.3f\t",temp);
     }
 
 
